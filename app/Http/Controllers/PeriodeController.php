@@ -12,7 +12,10 @@ class PeriodeController extends Controller
      */
     public function index()
     {
-        //
+        $result = Periode::all();
+        // dd($result);
+
+        return view('Periode.index', compact('result'));
     }
 
     /**

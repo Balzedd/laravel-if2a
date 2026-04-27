@@ -12,11 +12,10 @@ class FakultasController extends Controller
      */
     public function index()
     {
-    $result=Fakultas::all();
-    dd($result);
-    
-    return view('Fakultas.index', compact('result'));
+        $result = Fakultas::all();
+        // dd($result);
 
+        return view('Fakultas.index', compact('result'));
     }
 
     /**

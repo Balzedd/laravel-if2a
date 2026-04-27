@@ -11,6 +11,6 @@ Route::get('/', function () {
 Route::get('/tentang', function () {
     return view('tentang');
 });
-Route::resource('/Fakultas', FakultasController::class);
+Route::resource('/fakultas', FakultasController::class);
 
 Route::resource('/periodes', PeriodeController::class);
