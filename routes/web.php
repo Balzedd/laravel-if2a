@@ -16,4 +16,4 @@ Route::resource('/fakultas', FakultasController::class);
 
 Route::resource('/periodes', PeriodeController::class);
 
-Route::get('/prodi', [ProdiController::class, 'index']);
+Route::get('/prodi', [ProdiController::class, 'index'])->name('prodi.index');
