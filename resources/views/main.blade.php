@@ -117,7 +117,7 @@
                     </div>
                     <div class="flex-grow-1">
                       <h3 class="dropdown-item-title">
-                        Brad Diesel
+                        Adrian
                         <span class="float-end fs-7 text-danger"
                           ><i class="bi bi-star-fill"></i
                         ></span>
@@ -143,7 +143,7 @@
                     </div>
                     <div class="flex-grow-1">
                       <h3 class="dropdown-item-title">
-                        John Pierce
+                        JOJO
                         <span class="float-end fs-7 text-secondary">
                           <i class="bi bi-star-fill"></i>
                         </span>
@@ -169,7 +169,7 @@
                     </div>
                     <div class="flex-grow-1">
                       <h3 class="dropdown-item-title">
-                        Nora Silvester
+                        Kelvin
                         <span class="float-end fs-7 text-warning">
                           <i class="bi bi-star-fill"></i>
                         </span>
@@ -230,22 +230,22 @@
             <li class="nav-item dropdown user-menu">
               <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                 <img
-                  src="../assets/img/user2-160x160.jpg"
+                  src="../assets/img/mbg.jpg"
                   class="user-image rounded-circle shadow"
                   alt="User Image"
                 />
-                <span class="d-none d-md-inline">Alexander Pierce</span>
+                <span class="d-none d-md-inline">BALZEDD</span>
               </a>
               <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-end">
                 <!--begin::User Image-->
                 <li class="user-header text-bg-primary">
                   <img
-                    src="../assets/img/user2-160x160.jpg"
+                    src="../assets/img/mbg.jpg"
                     class="rounded-circle shadow"
                     alt="User Image"
                   />
                   <p>
-                    Alexander Pierce - Web Developer
+                    BALZEDD- Web Developer
                     <small>Member since Nov. 2023</small>
                   </p>
                 </li>
@@ -344,6 +344,12 @@
                 </ul>
               </li>
               <li class="nav-item">
+                <a href="{{ route('periode.index') }}" class="nav-link">
+                  <i class="nav-icon bi bi-calendar"></i>
+                  <p>Periode</p>
+                </a>
+              </li>
+              <li class="nav-item">
                 <a href="{{ route('fakultas.index') }}" class="nav-link">
                   <i class="nav-icon bi bi-bluesky"></i>
                   <p>Fakultas</p>
@@ -395,7 +401,7 @@
                 <!-- Default box -->
                 <div class="card">
                   <div class="card-header">
-                    <h3 class="card-title">Title</h3>
+                    <h3 class="card-title">Titles</h3>
 
                     <div class="card-tools">
                       <button

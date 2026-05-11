@@ -14,6 +14,6 @@ Route::get('/tentang', function () {
 });
 Route::resource('/fakultas', FakultasController::class);
 
-Route::resource('/periodes', PeriodeController::class);
+Route::resource('/periode', PeriodeController::class);
 
 Route::get('/prodi', [ProdiController::class, 'index'])->name('prodi.index');

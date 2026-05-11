@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Periode;
 use Illuminate\Http\Request;
+use Symfony\Component\Console\Input\Input;
 
 class PeriodeController extends Controller
 {
@@ -23,7 +24,7 @@ class PeriodeController extends Controller
      */
     public function create()
     {
-        //
+        Return view('Periode.create');
     }
 
     /**
@@ -31,7 +32,15 @@ class PeriodeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+         $input=
+        $request->validate([
+            'tahun_akademik' => 'required',
+            'semester'=>'required'
+        ]);
+
+        Periode::create($input);
+        
+        return redirect()->route('periode.index');
     }
 
     /**
