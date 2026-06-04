@@ -18,12 +18,15 @@ table-bordered">
             <td>{{ $item->tahun_akademik }}</td>
             <td>{{ $item->semester }}</td>
             <td>
-                <a href="{{ route('periode.edit', $item->id) }}" class="btn btn-warning">Edit</a>
-                <form action="{{ route('periode.destroy', $item->id) }}" method="POST" style="display:inline-block;">
-                    @csrf
-                    @method('DELETE')
-                    <button type="submit" class="btn btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">Delete</button>
-                </form>
+                <a href="{{ route('periode.edit', $item->id) }}" class="btn btn-xs btn-info btn-rounded"
+                            data-toggle="tooltip" title='Edit'>Ubah</a>
+
+                        <form method="POST" action="{{ route('periode.destroy', $item->id) }}" class="d-inline">
+                            @csrf
+                            <input name="_method" type="hidden" value="DELETE">
+                            <button type="submit" class="btn btn-xs btn-danger btn-rounded show_confirm"
+                                data-toggle="tooltip" title='Delete' data-nama='{{ $item->tahun_akademik }}'>Hapus</button>
+                        </form>
             </td>
         </tr>
         @endforeach

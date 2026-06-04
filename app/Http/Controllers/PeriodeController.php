@@ -54,24 +54,35 @@ class PeriodeController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Periode $periode)
+    public function edit($periode)
     {
-        //
+         $periode = Periode::find($periode,'id');
+       return view('periode.edit', compact
+       ('periode'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Periode $periode)
+    public function update(Request $request, $periode)
     {
-        //
+         $input=
+        $request->validate([
+            'tahun_akademik' => 'required',
+            'semester'=>'required'
+        ]);
+        Periode::where('id', $periode)->update($input);
+        
+        return redirect()->route('periode.index');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Periode $periode)
+    public function destroy($periode)
     {
-        //
+         $periode = Periode::find($periode,'id');
+        $periode->delete();
+        return redirect()->route('periode.index');
     }
 }

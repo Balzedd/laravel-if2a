@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Fakultas;
 use App\Models\Prodi;
 use Illuminate\Http\Request;
 
@@ -22,7 +23,8 @@ class ProdiController extends Controller
      */
     public function create()
     {
-        //
+        $fakultas = Fakultas::all();
+        return view('prodi.create', compact('fakultas'));
     }
 
     /**
@@ -30,7 +32,17 @@ class ProdiController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      $input= $request->validate([
+            'nama_prodi' => 'required|
+            unique:prodis',
+            'singkatan'=>'required|max:2', 
+            'kaprodi'=>'required',
+            'fakultas_id'=>'required'
+        ]);
+
+        Prodi::create($input);
+        
+        return redirect()->route('prodi.index');
     }
 
     /**
@@ -46,22 +58,38 @@ class ProdiController extends Controller
      */
     public function edit(Prodi $prodi)
     {
-        //
+        $fakultas = Fakultas::all();
+        $prodi = Prodi::find($prodi,'id');
+        //  $prodi = Prodi::find($prodi,'');
+       return view('prodi.edit', compact
+       ('prodi', 'fakultas'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Prodi $prodi)
+    public function update(Request $request, $prodi)
     {
-        //
+       
+          $input=
+        $request->validate([
+            'nama_prodi' => 'required|unique:prodis,nama_prodi,'.$prodi,
+            'singkatan'=>'required',
+            'kaprodi'=>'required',
+            'fakultas_id'=>'required'
+        ]);   
+        Prodi::where('id', $prodi)->update($input);
+        
+        return redirect()->route('prodi.index');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Prodi $prodi)
+    public function destroy( $prodi)
     {
-        //
+          $prodi = Prodi::find($prodi,'id');
+        $prodi->delete();
+        return redirect()->route('prodi.index');
     }
 }
