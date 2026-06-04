@@ -59,7 +59,7 @@ class ProdiController extends Controller
     public function edit(Prodi $prodi)
     {
         $fakultas = Fakultas::all();
-        $prodi = Prodi::find($prodi,'id');
+        $prodi = Prodi::findOrFail($prodi->id);
         //  $prodi = Prodi::find($prodi,'');
        return view('prodi.edit', compact
        ('prodi', 'fakultas'));
