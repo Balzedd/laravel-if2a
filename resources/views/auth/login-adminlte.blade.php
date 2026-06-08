@@ -185,13 +185,14 @@
 
                 <form action="{{ route('login') }}" method="post">
                     <div class="input-group mb-3">
-                        <input type="email" class="form-control" placeholder="Email" />
+                        <input type="email" class="form-control" placeholder="Email" id="email" name="email" />
                         <div class="input-group-text">
                             <span class="bi bi-envelope"></span>
                         </div>
                     </div>
                     <div class="input-group mb-3">
-                        <input type="password" class="form-control" placeholder="Password" />
+                        <input type="password" class="form-control" placeholder="Password" id="password"
+                            name="password" />
                         <div class="input-group-text">
                             <span class="bi bi-lock-fill"></span>
                         </div>
